@@ -1,0 +1,7 @@
+<!-- Demo MTrackerCar launch file. -->
+<launch>
+  <node pkg="mtrackercar" type="mtrackercar" name="mtrackercar"/>
+  <remap from="pos" to="odom"/>
+  <node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0 0 0 0 0 0 map odom 30" />
+  <node pkg="tf" type="static_transform_publisher" name="base_to_base_link" args="0 0 0 0 0 0 base base_link 30" /> 
+</launch>

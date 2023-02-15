@@ -1,0 +1,11 @@
+Czego nie rozumiem w ramce robota:
+- Dlaczego prędkości kół nie są przesyłane jako float, skoro x, y i theta dla odometrii są?
+- Dlaczego prędkości kół (int16) są wg dokumentacji wysyłane jako little endian a crc (uint16) jako big endian?
+- Dlaczego stosujemy 2 bajtowy kod statusu (w ramce danych), a nie wykorzystujemy bajtu rozkazu?
+- Dlaczego drugi bajt przesyłanej ramki zawiera liczbę bajtów nie uwzględniając samego siebie skoro jest on uwzględniany podczas liczenia crc (później skutkuje to tym, że do liczenia crc trzeba podawać w argumencie len + 1)?
+
+Propozycje:
+- Niech ramka zwrotna będzie miała identyczną formę jak ramka przesyłana. Znacznie uprości to kod.
+- Niech wszystkie ramki wysyłane mają taką samą strukturę i długość. Przesłanie kilku zer nie zaszkodzi, a ZNACZĄCO uprości kod.
+- Niech crc ma zwykły endian - jak wszystko inne. To też uprości kod.
+- Koła kręcą się w dwóch kierunkach przy takich samym prędkościach. To powinno być załatwiane na low-level controller.

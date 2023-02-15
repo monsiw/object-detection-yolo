@@ -1,0 +1,18 @@
+<!-- Remote MTracker launch file. -->
+<launch>
+  <env name="ROS_MASTER_URI" value="http://192.168.1.190:11311"/>
+  <env name="ROSLAUNCH_SSH_UNKNOWN" value="1"/>
+
+  <machine name="MTracker" user="mtracker" address="192.168.1.190" env-loader="/opt/ros/hydro/mtracker_env.sh" default="true"/>
+  <machine name="PC" user="student" address="192.168.1.115" env-loader="/opt/ros/hydro/mtracker_env.sh"/>
+
+  <!-- Mtracker Nodes -->
+  <node pkg="mtracker" type="mtracker" name="mtracker_node" machine="MTracker"/>
+  <node pkg="mtracker" type="mtracker_joy" name="mtracker_joy_node" machine="MTracker"/>
+
+  <!-- PC Nodes -->
+  <node pkg="joy" type="joy_node" name="joy_node" machine="PC">
+    <param name="dev" type="string" value="/dev/input/js0"/>
+    <param name="deadzone" value="0.0"/>
+  </node>
+</launch>
