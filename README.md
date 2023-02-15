@@ -1,4 +1,8 @@
 # Object Detection with Robotic Platform
+## Start
+In workspace you need to build your packages using<br/>
+*catkin_make*<br/>
+*source devel/setup.bash*<br/><br/>
 *rosrun rqt_graph rqt_graph* <br/> <br/>
 <img src="https://github.com/monsiw/object_detection_yolov5/blob/main/images/2.png" width="400" height="200" />
 ## Inference with *darknet_ros* package
@@ -16,6 +20,7 @@ The keys represent the following maneuvers: <br/>
 • __*m*__  key is responsible for driving backwards with the front wheels turned to the right, <br/>
 • __*,*__  key is responsible for driving backwards with the front wheels in the starting position, <br/>
 • __*.*__  key is responsible for driving backwards with the front wheels turned to the left. <br/><br/>
-<img src="https://user-images.githubusercontent.com/42692566/219169130-8e171972-6bff-45c8-b22f-fa87af437f7b.mp4" width="200" height="300">
+<img src="https://user-images.githubusercontent.com/42692566/219169130-8e171972-6bff-45c8-b22f-fa87af437f7b.mp4" width="200" height="300"><br/>
+## Citing
 
 
